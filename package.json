@@ -1,0 +1,26 @@
+{
+  "name": "ts-jest-vscodedebug-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "clean": "cross-env rm -rf build",
+    "debug": "cross-env rm -rf debug && tsc -p tsconfig.debug.json",
+    "watch": "concurrently \"tsc -p tsconfig.debug.json --watch\" \"jest --watch\"",
+    "build": "tsc",
+    "pretest": "yarn build",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.0",
+    "concurrently": "^3.5.1",
+    "cross-env": "^5.1.4",
+    "jest": "^22.4.3",
+    "ts-jest": "^22.4.2",
+    "ts-node": "^5.0.1",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.10.0",
+    "tslint-language-service": "^0.9.8",
+    "typescript": "^2.7.2"
+  }
+}
